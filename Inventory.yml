@@ -1,0 +1,8 @@
+      all:
+        hosts:
+          windows_server:
+            ansible_host: 192.168.1.100  # Change to your Windows Server IP
+            ansible_user: Administrator
+            ansible_password: "YourSecurePassword"
+            ansible_connection: winrm
+            ansible_winrm_transport: basic

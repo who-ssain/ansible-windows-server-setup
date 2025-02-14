@@ -1,2 +1,10 @@
 # ansible-windows-server-setup
-Set up of windows server via ansible
+This repository contains an **Ansible playbook** for automating Windows Server setup, including:
+- Installing required software
+- Configuring user accounts
+- Applying security settings
+
+## Usage
+```bash
+ansible-playbook -i inventory.yml site.yml
+```

@@ -1,0 +1,20 @@
+name: Windows Server Setup
+  hosts: windows_server
+  tasks:
+    - name: Ensure IIS is installed
+      win_feature:
+        name: Web-Server
+        state: present
+      register: iis_install
+
+    - name: Restart IIS if installed
+      win_service:
+        name: W3SVC
+        state: restarted
+      when: iis_install.changed
+
+    - name: Create a new user
+      win_user:
+        name: ansible_admin
+        password: "SecureP@ssw0rd"
+        state: present
